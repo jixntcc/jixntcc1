@@ -330,3 +330,54 @@ hr {
   color: #a8c7ff;
 }
 
+/* ✦ InnerVault Filter Bar ✦ */
+#filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0 2rem;
+  justify-content: center;
+}
+
+.filter-btn {
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  background: #e5e5e5;
+}
+
+.filter-btn.active {
+  background: #0076ff;
+  color: #fff;
+  border-color: #0076ff;
+}
+
+/* Dark Mode Styling */
+.dark-mode #filter-bar {
+  background: transparent;
+}
+
+.dark-mode .filter-btn {
+  background: #1a1a1a;
+  color: #ddd;
+  border-color: #333;
+}
+
+.dark-mode .filter-btn:hover {
+  background: #222;
+}
+
+.dark-mode .filter-btn.active {
+  background: #a8c7ff;
+  color: #000;
+  border-color: #a8c7ff;
+}
+
+
