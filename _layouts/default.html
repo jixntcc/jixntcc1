@@ -15,7 +15,7 @@
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
 
     <style>
-      /* ✦ InnerVault Custom Navigation Bar ✦ */
+      /* ✦ InnerVault Navigation Bar ✦ */
       .masthead {
         display: flex;
         align-items: center;
@@ -71,43 +71,136 @@
       }
 
       /* 🌙 Dark Mode Styles */
-#theme-toggle {
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-  margin-left: 1rem;
-  color: #333;
-  transition: color 0.2s ease;
-}
+      #theme-toggle {
+        background: none;
+        border: none;
+        font-size: 1.2rem;
+        cursor: pointer;
+        margin-left: 1rem;
+        color: #333;
+        transition: color 0.2s ease;
+      }
 
-#theme-toggle:hover {
-  color: #000;
-}
+      #theme-toggle:hover {
+        color: #000;
+      }
 
-body {
-  transition: background-color 0.4s ease, color 0.4s ease;
-}
+      body {
+        transition: background-color 0.4s ease, color 0.4s ease;
+      }
 
-.dark-mode {
-  background-color: #0f0f0f;
-  color: #e5e5e5;
-}
+      .dark-mode {
+        background-color: #0f0f0f;
+        color: #e5e5e5;
+      }
 
-.dark-mode a {
-  color: #a8c7ff;
-}
+      .dark-mode a {
+        color: #a8c7ff;
+      }
 
-.dark-mode .site-header,
-.dark-mode .wrapper-footer {
-  background: #161616;
-  border-color: #2a2a2a;
-}
+      .dark-mode .site-header,
+      .dark-mode .wrapper-footer {
+        background: #161616;
+        border-color: #2a2a2a;
+      }
 
-.dark-mode .footer-text {
-  color: #aaa;
-}
+      .dark-mode .footer-text {
+        color: #aaa;
+      }
 
+      /* ✦ InnerVault Dark Mode Code Blocks ✦ */
+      .dark-mode pre,
+      .dark-mode code {
+        background-color: #1a1a1a;
+        color: #eaeaea;
+        border-radius: 6px;
+      }
+
+      .dark-mode pre {
+        padding: 1rem;
+        overflow-x: auto;
+        border: 1px solid #2a2a2a;
+      }
+
+      /* Rouge syntax colors */
+      .dark-mode .highlight .k,
+      .dark-mode .highlight .kd,
+      .dark-mode .highlight .kn,
+      .dark-mode .highlight .kp,
+      .dark-mode .highlight .kr,
+      .dark-mode .highlight .nb,
+      .dark-mode .highlight .nf,
+      .dark-mode .highlight .nx,
+      .dark-mode .highlight .nt,
+      .dark-mode .highlight .nc {
+        color: #8ab4f8;
+      }
+
+      .dark-mode .highlight .s,
+      .dark-mode .highlight .sa,
+      .dark-mode .highlight .sb,
+      .dark-mode .highlight .sc,
+      .dark-mode .highlight .sd,
+      .dark-mode .highlight .se,
+      .dark-mode .highlight .sh,
+      .dark-mode .highlight .si,
+      .dark-mode .highlight .sr,
+      .dark-mode .highlight .ss {
+        color: #a3e635;
+      }
+
+      .dark-mode .highlight .c,
+      .dark-mode .highlight .cm,
+      .dark-mode .highlight .cp,
+      .dark-mode .highlight .c1,
+      .dark-mode .highlight .cs {
+        color: #6b7280;
+        font-style: italic;
+      }
+
+      .dark-mode .highlight .m,
+      .dark-mode .highlight .mi,
+      .dark-mode .highlight .il {
+        color: #fca5a5;
+      }
+
+      .dark-mode .highlight .o,
+      .dark-mode .highlight .ow {
+        color: #eab308;
+      }
+
+      .dark-mode .highlight .na,
+      .dark-mode .highlight .nt {
+        color: #22d3ee;
+      }
+
+      /* ✦ Custom Scrollbars ✦ */
+      ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: #d4d4d4;
+        border-radius: 6px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: #aaa;
+      }
+
+      .dark-mode::-webkit-scrollbar-thumb {
+        background-color: #444;
+      }
+
+      .dark-mode::-webkit-scrollbar-thumb:hover {
+        background-color: #666;
+      }
+
+      /* ✦ Subtle Glow for Links in Dark Mode ✦ */
+      .dark-mode a:hover {
+        text-shadow: 0 0 6px rgba(168, 199, 255, 0.4);
+      }
     </style>
   </head>
 
@@ -129,28 +222,28 @@ body {
             <a href="{{ site.baseurl }}/about">About</a>
             <a href="{{ site.baseurl }}/archive">Archive</a>
           </nav>
+
           <!-- 🌙 Dark Mode Toggle -->
-<button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+          <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
 
-<script>
-  // Load previously saved theme
-  const body = document.body;
-  const toggle = document.getElementById('theme-toggle');
-  const savedTheme = localStorage.getItem('theme');
+          <script>
+            // Load saved theme preference
+            const body = document.body;
+            const toggle = document.getElementById('theme-toggle');
+            const savedTheme = localStorage.getItem('theme');
 
-  if (savedTheme === 'dark') {
-    body.classList.add('dark-mode');
-    toggle.textContent = '☀️';
-  }
+            if (savedTheme === 'dark') {
+              body.classList.add('dark-mode');
+              toggle.textContent = '☀️';
+            }
 
-  toggle.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    const isDark = body.classList.contains('dark-mode');
-    toggle.textContent = isDark ? '☀️' : '🌙';
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  });
-</script>
-          
+            toggle.addEventListener('click', () => {
+              body.classList.toggle('dark-mode');
+              const isDark = body.classList.contains('dark-mode');
+              toggle.textContent = isDark ? '☀️' : '🌙';
+              localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            });
+          </script>
         </header>
       </div>
     </div>
@@ -159,74 +252,25 @@ body {
       {{ content }}
     </div>
 
+    <!-- ✦ InnerVault Footer ✦ -->
     <div class="wrapper-footer">
-  <div class="container">
-    <footer class="footer">
-      <div class="footer-content">
-        <div class="footer-icons">
-          {% include svg-icons.html %}
-        </div>
+      <div class="container">
+        <footer class="footer">
+          <div class="footer-content">
+            <div class="footer-icons">
+              {% include svg-icons.html %}
+            </div>
 
-        <div class="footer-text">
-          <p>© {{ site.time | date: '%Y' }} <strong>{{ site.name }}</strong> · jixntcc</p>
-          <p class="vault-credit">Part of the <em>InnerVault</em> ecosystem — documenting evolution, one commit at a time.</p>
-        </div>
+            <div class="footer-text">
+              <p>© {{ site.time | date: '%Y' }} <strong>{{ site.name }}</strong> · jixntcc</p>
+              <p class="vault-credit">
+                Part of the <em>InnerVault</em> ecosystem — documenting evolution, one commit at a time.
+              </p>
+            </div>
+          </div>
+        </footer>
       </div>
-    </footer>
-  </div>
-</div>
-
-<style>
-  /* ✦ InnerVault Footer ✦ */
-  .wrapper-footer {
-    border-top: 1px solid #e5e5e5;
-    margin-top: 3rem;
-    padding: 1.5rem 0;
-    background: #fafafa;
-  }
-
-  .footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 0.5rem;
-  }
-
-  .footer-icons svg {
-    width: 20px;
-    height: 20px;
-    margin: 0 6px;
-    fill: #666;
-    transition: fill 0.2s ease;
-  }
-
-  .footer-icons svg:hover {
-    fill: #111;
-  }
-
-  .footer-text {
-    font-size: 0.85rem;
-    color: #555;
-    line-height: 1.5;
-  }
-
-  .footer-text strong {
-    color: #222;
-  }
-
-  .vault-credit {
-    font-style: italic;
-    color: #777;
-  }
-
-  @media (max-width: 600px) {
-    .footer-content {
-      padding: 0 1rem;
-    }
-  }
-</style>
-
+    </div>
 
     {% include analytics.html %}
   </body>
