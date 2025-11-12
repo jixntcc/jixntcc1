@@ -1,0 +1,261 @@
+/* ============================================================
+   ✦ INNERVAULT JOURNAL STYLE SHEET ✦
+   ------------------------------------------------------------
+   Clean, minimal, responsive typography and structure for
+   Jekyll Now-based blog.
+   ============================================================ */
+
+/* --- Base Typography --- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.75;
+  color: #222;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Container Layout --- */
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* --- Headings --- */
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+  color: #111;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 2rem;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  color: #333;
+}
+
+/* --- Links --- */
+a {
+  color: #0076ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* --- Paragraphs & Lists --- */
+p {
+  margin: 1rem 0;
+}
+
+ul, ol {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+li {
+  margin-bottom: 0.3rem;
+}
+
+/* --- Images --- */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* --- Blockquotes --- */
+blockquote {
+  border-left: 4px solid #ddd;
+  margin: 1.5rem 0;
+  padding: 0.8rem 1.2rem;
+  color: #555;
+  font-style: italic;
+  background: #f9f9f9;
+}
+
+.dark-mode blockquote {
+  background: #1a1a1a;
+  color: #ccc;
+  border-color: #2a2a2a;
+}
+
+/* --- Code & Syntax Highlighting --- */
+pre, code {
+  font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
+  background: #f5f5f5;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+}
+
+pre {
+  padding: 1rem;
+  overflow-x: auto;
+  line-height: 1.6;
+}
+
+.highlight {
+  background: #f8f8f8;
+  border-radius: 6px;
+}
+
+/* --- Tables --- */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 0.6rem 0.8rem;
+}
+
+table th {
+  background: #f2f2f2;
+  font-weight: 600;
+}
+
+/* --- Post Metadata --- */
+.post-meta {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+/* --- Buttons --- */
+button, .btn {
+  background: #0076ff;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+button:hover, .btn:hover {
+  background: #005ce6;
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+/* --- Dark Mode Integration --- */
+.dark-mode {
+  background-color: #0f0f0f;
+  color: #e5e5e5;
+}
+
+.dark-mode h1, .dark-mode h2, .dark-mode h3 {
+  color: #f5f5f5;
+}
+
+.dark-mode a {
+  color: #a8c7ff;
+}
+
+.dark-mode pre, .dark-mode code {
+  background: #1b1b1b;
+  color: #eaeaea;
+}
+
+.dark-mode table th {
+  background: #222;
+  color: #eee;
+}
+
+.dark-mode table td {
+  border-color: #333;
+}
+
+/* --- Animations --- */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* --- Fancy Horizontal Line --- */
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 2rem 0;
+}
+
+.dark-mode hr {
+  border-color: #333;
+}
+
+/* --- Post Cards (for future use in blog lists) --- */
+.post-card {
+  border-bottom: 1px solid #eee;
+  padding: 1.2rem 0;
+  transition: all 0.2s ease;
+}
+
+.post-card:hover {
+  background: #fafafa;
+}
+
+.dark-mode .post-card:hover {
+  background: #151515;
+}
+
+/* --- Selection Highlight --- */
+::selection {
+  background: #0076ff;
+  color: #fff;
+}
+
+.dark-mode ::selection {
+  background: #a8c7ff;
+  color: #000;
+}
