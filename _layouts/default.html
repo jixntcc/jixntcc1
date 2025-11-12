@@ -69,6 +69,45 @@
           margin-top: 0.6rem;
         }
       }
+
+      /* 🌙 Dark Mode Styles */
+#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-left: 1rem;
+  color: #333;
+  transition: color 0.2s ease;
+}
+
+#theme-toggle:hover {
+  color: #000;
+}
+
+body {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.dark-mode {
+  background-color: #0f0f0f;
+  color: #e5e5e5;
+}
+
+.dark-mode a {
+  color: #a8c7ff;
+}
+
+.dark-mode .site-header,
+.dark-mode .wrapper-footer {
+  background: #161616;
+  border-color: #2a2a2a;
+}
+
+.dark-mode .footer-text {
+  color: #aaa;
+}
+
     </style>
   </head>
 
