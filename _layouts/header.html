@@ -1,0 +1,49 @@
+<header class="site-header" role="banner">
+  <div class="wrapper">
+    <a class="site-title" href="{{ site.baseurl }}/">{{ site.name }}</a>
+    <nav class="site-nav">
+      <ul class="nav-list">
+        <li><a href="{{ site.baseurl }}/">Home</a></li>
+        <li><a href="{{ site.baseurl }}/about">About</a></li>
+        <li><a href="{{ site.baseurl }}/archive">Archive</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid #e5e5e5;
+    padding: 1rem 0;
+    background: #fff;
+  }
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  .site-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #111;
+  }
+  .site-nav .nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+  }
+  .site-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+  .site-nav a:hover {
+    color: #000;
+  }
+</style>
